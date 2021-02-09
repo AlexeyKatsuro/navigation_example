@@ -9,9 +9,10 @@ abstract class NavigateAction {
 }
 
 class NavigatePushAction extends NavigateAction {
-  NavigatePushAction(this.name, {this.arguments});
+  NavigatePushAction(this.pageName, {this.hostName, this.arguments});
 
-  final String name;
+  final String pageName;
+  final String hostName;
 
   final Object arguments;
 }
@@ -29,3 +30,13 @@ class NavigateToHostAction extends NavigateAction {
 }
 
 class NavigatePopAction extends NavigateAction {}
+
+class NavigatePopUntilAction extends NavigateAction {
+  NavigatePopUntilAction({
+    @required this.pageName,
+    this.inclusive = false,
+  });
+
+  final String pageName;
+  final bool inclusive;
+}

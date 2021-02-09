@@ -6,6 +6,7 @@ class Routes {
   static const service2Page = '/service2Page';
   static const subHomePage = '/subHomePage';
   static const historyPage = '/historyPage';
+  static const detailsPage = '/detailsPage';
   static const pageNotFound = '/pageNotFound';
 }
 
@@ -15,14 +16,4 @@ class RouteHosts {
   static const homeHost = '/home';
   static const serviceHost = '/service';
   static const historyHost = '/service';
-}
-
-class NavCommands {
-  static const landingPage = '/landingPage';
-  static const toLoginPage = '/loginPage';
-  static const toHomePage = '/homePage';
-  static const toService1Page = '/service1Page';
-  static const toService2Page = '/service2Page';
-  static const toSubHomePage = '/subHomePage';
-  static const toHistoryPage = '/historyPage';
 }

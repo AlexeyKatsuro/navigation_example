@@ -9,11 +9,18 @@ final navigationStackReducer = combineReducers<NavNodeHost>([
 ]);
 
 NavNodeHost _navigatePushReducer(NavNodeHost navNodeHost, NavigatePushAction action) {
-  return navNodeHost.copyPush(NavNodePage(name: action.name, arg: action.arguments));
+  return navNodeHost.copyPushToHost(
+    NavNodePage(name: action.pageName, arg: action.arguments),
+    hostName: action.hostName,
+  );
 }
 
 NavNodeHost _navigatePopReducer(NavNodeHost navNodeHost, NavigatePopAction action) {
-  return navNodeHost.copyPop();
+  return navNodeHost.deepPop();
+}
+
+NavNodeHost _navigatePopUntilReducer(NavNodeHost navNodeHost, NavigatePopUntilAction action) {
+  return navNodeHost.deepPop();
 }
 
 NavNodeHost _navigateToHostReducer(NavNodeHost navNodeHost, NavigateToHostAction action) {

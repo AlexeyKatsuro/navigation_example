@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:navigation_example/navigation/nav_node.dart';
 import 'package:navigation_example/navigation/navigation_container.dart';
-import 'package:navigation_example/navigation/routes.dart';
 import 'package:navigation_example/redux/app_state.dart';
 import 'package:navigation_example/redux/navigation_actions.dart';
 import 'package:redux/redux.dart';
@@ -84,11 +83,11 @@ class _ViewModel {
     );
   }
 
-  static const _bottomRoutes = [
+  /* static const _bottomRoutes = [
     Routes.service1Page,
     Routes.homePage,
     Routes.historyPage,
-  ];
+  ];*/
 
   final int tabIndex;
   final ValueChanged<int> onRouteChange;

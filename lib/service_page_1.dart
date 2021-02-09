@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:navigation_example/navigation/routes.dart';
+import 'package:navigation_example/navigation/nav_actions.dart';
 import 'package:navigation_example/redux/app_state.dart';
-import 'package:navigation_example/redux/navigation_actions.dart';
 
 class ServicePage1 extends StatelessWidget {
   const ServicePage1({Key key}) : super(key: key);
@@ -17,7 +16,7 @@ class ServicePage1 extends StatelessWidget {
         child: ElevatedButton(
           child: Text('to Service 2'),
           onPressed: () {
-            StoreProvider.of<AppState>(context).dispatch(NavigateAction.push(Routes.service2Page));
+            StoreProvider.of<AppState>(context).dispatch(NavActions.toService2Page());
           },
         ),
       ),

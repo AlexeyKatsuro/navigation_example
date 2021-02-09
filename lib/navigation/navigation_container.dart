@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation_example/details_page.dart';
 import 'package:navigation_example/history_page.dart';
 import 'package:navigation_example/home_page.dart';
 import 'package:navigation_example/landing_page.dart';
@@ -139,6 +140,13 @@ mixin AppNodePageGraph implements NodePageGraph {
           arguments: nodePage.arg,
           child: HistoryPage(),
         );
+      case Routes.detailsPage:
+        return MaterialPage(
+          key: Key(nodePage.name),
+          name: nodePage.name,
+          arguments: nodePage.arg,
+          child: DetailsPage(),
+        );
       default:
         return MaterialPage(
           key: Key(nodePage.name),
@@ -151,7 +159,7 @@ mixin AppNodePageGraph implements NodePageGraph {
 
   Page buildNodeHost(NavNodeHost nodeHost) {
     switch (nodeHost.name) {
-      case RouteHosts.homeHost:
+      case RouteHosts.mainHost:
         return MaterialPage(
           child: MainHost(nodeHost: nodeHost),
         );

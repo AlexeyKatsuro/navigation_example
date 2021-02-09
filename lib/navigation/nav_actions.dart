@@ -2,6 +2,12 @@ import 'package:navigation_example/navigation/routes.dart';
 import 'package:navigation_example/redux/navigation_actions.dart';
 
 abstract class NavActions {
+  static NavigateAction pop() {
+    return NavigatePushAction(
+      Routes.loginPage,
+    );
+  }
+
   static NavigateAction toLoginPage() {
     return NavigatePushAction(
       Routes.loginPage,
@@ -9,18 +15,19 @@ abstract class NavActions {
   }
 
   static NavigateAction toHomePage() {
-    return NavigatePushAction(
-      Routes.homePage,
-    );
-    /* return NavigateToHostAction(
+    return NavigateToHostAction(
       hostName: RouteHosts.mainHost,
       startPageName: Routes.homePage,
-    );*/
+    );
   }
 
   static NavigateAction toSubHomePage() {
+    return NavigatePushAction(Routes.subHomePage, hostName: RouteHosts.mainHost);
+  }
+
+  static NavigateAction toHistoryPage() {
     return NavigatePushAction(
-      Routes.subHomePage,
+      Routes.historyPage,
     );
   }
 
@@ -36,9 +43,10 @@ abstract class NavActions {
     );
   }
 
-  static NavigateAction toHistoryPage() {
+  static NavigateAction toDetails() {
     return NavigatePushAction(
-      Routes.historyPage,
+      Routes.detailsPage,
+      hostName: RouteHosts.rootHost,
     );
   }
 }
